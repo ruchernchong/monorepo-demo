@@ -1,0 +1,15 @@
+{
+  "name": "@ruchernchong/monorepo-app-a",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@ruchernchong/monorepo-shared": "workspace:*",
+    "hono": "^4.7.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@ruchernchong/monorepo-shared",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "hono": "^4.7.2"
+  }
+}
