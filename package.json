@@ -6,7 +6,11 @@
   "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nx run-many --target=test --all",
+    "test:app-a": "nx run app-a:test",
+    "test:app-b": "nx run app-b:test",
+    "test:shared": "nx run shared:test",
+    "test:coverage": "nx run-many --target=test:coverage --all",
     "dev:app-a": "nx run app-a:dev",
     "dev:app-b": "nx run app-b:dev",
     "dev:all": "nx run-many --target=dev --all",

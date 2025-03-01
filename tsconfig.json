@@ -4,7 +4,10 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "target": "ESNext",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@shared/*": ["packages/shared/src/*"]
+    }
   },
   "include": ["**/*.ts"]
 }

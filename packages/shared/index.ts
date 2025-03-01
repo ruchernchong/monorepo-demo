@@ -1,2 +1,2 @@
-export * from "./middleware";
-export * from "./responses";
+export * from "@shared/middleware";
+export * from "@shared/responses";
