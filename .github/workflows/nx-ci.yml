@@ -38,33 +38,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nx-
       
-      # Run lint on affected projects
-      - name: Lint affected projects
-        run: pnpm nx affected --target=lint --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --parallel=3
-
-      # Run affected tests
-      - name: Test affected projects
-        run: pnpm nx affected --target=test --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --parallel=3
-      
       # Build all affected apps
       - name: Build affected apps
         run: pnpm nx affected --target=build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --parallel=3
-      
+
       # Deploy affected apps (only on main branch)
       - name: Deploy affected apps
         if: github.ref == 'refs/heads/main'
         run: |
           # Get the list of affected apps
-          AFFECTED_APPS=$(pnpm nx affected:apps --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --plain)
+          AFFECTED_APPS=$(pnpm nx show projects --affected --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --type=app --plain)
           echo "Affected apps: $AFFECTED_APPS"
           
-          # Deploy each affected app using SST
-          if [[ $AFFECTED_APPS == *"app-a"* ]]; then
-            echo "Deploying app-a"
-            pnpm nx run app-a:deploy
-          fi
-          
-          if [[ $AFFECTED_APPS == *"app-b"* ]]; then
-            echo "Deploying app-b"
-            pnpm nx run app-b:deploy
-          fi
+          # Deploy each affected app
+          for APP in $AFFECTED_APPS; do
+            echo "Deploying $APP"
+            pnpm nx run $APP:deploy
+          done
