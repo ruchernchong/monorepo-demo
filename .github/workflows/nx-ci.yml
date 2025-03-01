@@ -29,35 +29,42 @@ jobs:
       # Derive appropriate SHAs for base and head for `nx affected` commands
       - uses: nrwl/nx-set-shas@v3
       
+      # Setup NX cache
+      - name: NX Cache
+        uses: actions/cache@v3
+        with:
+          path: .nx/cache
+          key: ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-nx-
+      
+      # Run lint on affected projects
+      - name: Lint affected projects
+        run: pnpm nx affected --target=lint --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --parallel=3
+
       # Run affected tests
       - name: Test affected projects
-        run: |
-          pnpm nx affected --target=test --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        run: pnpm nx affected --target=test --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --parallel=3
       
       # Build all affected apps
       - name: Build affected apps
-        run: |
-          pnpm nx affected --target=build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }}
+        run: pnpm nx affected --target=build --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --parallel=3
       
       # Deploy affected apps (only on main branch)
       - name: Deploy affected apps
         if: github.ref == 'refs/heads/main'
         run: |
-          # Here you would typically use nx affected to deploy only the affected apps
-          # For example, you might want to:
-          # 1. Get the list of affected apps
+          # Get the list of affected apps
           AFFECTED_APPS=$(pnpm nx affected:apps --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --plain)
           echo "Affected apps: $AFFECTED_APPS"
           
-          # 2. Deploy each affected app
+          # Deploy each affected app using SST
           if [[ $AFFECTED_APPS == *"app-a"* ]]; then
             echo "Deploying app-a"
-            # Add deployment command for app-a
-            # For example: pnpm nx deploy app-a
+            pnpm nx run app-a:deploy
           fi
           
           if [[ $AFFECTED_APPS == *"app-b"* ]]; then
             echo "Deploying app-b"
-            # Add deployment command for app-b
-            # For example: pnpm nx deploy app-b
+            pnpm nx run app-b:deploy
           fi
