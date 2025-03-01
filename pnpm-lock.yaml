@@ -43,6 +43,13 @@ importers:
       hono:
         specifier: ^4.7.2
         version: 4.7.2
+      sst:
+        specifier: 3.9.10
+        version: 3.9.10
+    devDependencies:
+      '@cloudflare/workers-types':
+        specifier: 4.20250214.0
+        version: 4.20250214.0
 
   packages/shared:
     dependencies:
