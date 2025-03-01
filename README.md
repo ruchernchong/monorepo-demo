@@ -22,12 +22,6 @@ pnpm dev:app-b     # Run app-b in development mode
 pnpm dev           # Run all apps in development mode
 ```
 
-## Building
-
-```bash
-pnpm build           # Build all projects
-pnpm build:shared    # Build shared package only
-```
 
 ## Testing
 

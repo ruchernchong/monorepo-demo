@@ -14,8 +14,6 @@
     "dev": "nx run-many --target=dev --all --parallel=3 --output-style=stream",
     "dev:app-a": "nx run app-a:dev",
     "dev:app-b": "nx run app-b:dev",
-    "build": "nx run-many --target=build --all",
-    "build:shared": "nx run shared:build",
     "deploy": "nx run-many --target=deploy --all",
     "deploy:app-a": "nx run app-a:deploy",
     "deploy:app-b": "nx run app-b:deploy"

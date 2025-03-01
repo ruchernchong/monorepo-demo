@@ -7,10 +7,6 @@
 - `pnpm dev:app-b` - Run app-b in development mode
 - `pnpm dev` - Run all apps in development mode (with parallel execution)
 
-### Build
-- `pnpm build` - Build all packages
-- `pnpm build:shared` - Build shared package only
-- The shared package build uses TypeScript with path alias resolution (`tsc-alias`)
 
 ### Testing
 - `pnpm test` - Run all tests in all projects
