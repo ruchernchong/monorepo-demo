@@ -1,0 +1,141 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      app-a: ${{ steps.filter.outputs.app-a }}
+      app-b: ${{ steps.filter.outputs.app-b }}
+      shared: ${{ steps.filter.outputs.shared }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            app-a:
+              - 'apps/app-a/**'
+            app-b:
+              - 'apps/app-b/**'
+            shared:
+              - 'packages/shared/**'
+
+
+  build-shared:
+    runs-on: ubuntu-latest
+    needs: [detect-changes]
+    if: needs.detect-changes.outputs.shared == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10.5.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build shared package
+        working-directory: packages/shared
+        run: |
+          # Add build command here if needed
+          echo "Building shared package"
+
+  build-app-a:
+    runs-on: ubuntu-latest
+    needs: [detect-changes, build-shared]
+    if: |
+      needs.detect-changes.outputs.app-a == 'true' || 
+      needs.detect-changes.outputs.shared == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10.5.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build app-a
+        working-directory: apps/app-a
+        run: |
+          # Add build command for app-a
+          echo "Building app-a"
+      
+  build-app-b:
+    runs-on: ubuntu-latest
+    needs: [detect-changes, build-shared]
+    if: |
+      needs.detect-changes.outputs.app-b == 'true' || 
+      needs.detect-changes.outputs.shared == 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10.5.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build app-b
+        working-directory: apps/app-b
+        run: |
+          # Add build command for app-b
+          echo "Building app-b"
+
+  deploy-app-a:
+    runs-on: ubuntu-latest
+    needs: [build-app-a]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10.5.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Deploy app-a
+        working-directory: apps/app-a
+        run: |
+          # Add deployment command for app-a
+          # For example with SST:
+          # pnpm sst deploy --stage prod
+          echo "Deploying app-a"
+
+  deploy-app-b:
+    runs-on: ubuntu-latest
+    needs: [build-app-b]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10.5.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Deploy app-b
+        working-directory: apps/app-b
+        run: |
+          # Add deployment command for app-b
+          # For example with SST:
+          # pnpm sst deploy --stage prod
+          echo "Deploying app-b"
