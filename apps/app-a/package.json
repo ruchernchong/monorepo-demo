@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "sst dev --stage dev",
+    "deploy": "sst deploy --stage prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ru Chern Chong <hello@ruchern.dev>",
