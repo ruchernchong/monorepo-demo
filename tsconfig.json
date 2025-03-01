@@ -3,10 +3,13 @@
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "skipLibCheck": true,
     "target": "ESNext",
     "verbatimModuleSyntax": true,
     "paths": {
-      "@shared/*": ["packages/shared/src/*"]
+      "@shared/*": ["packages/shared/src/*"],
+      "@app-a/*": ["apps/app-a/src/*"],
+      "@app-b/*": ["apps/app-b/src/*"]
     }
   },
   "include": ["**/*.ts"]

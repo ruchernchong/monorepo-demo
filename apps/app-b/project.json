@@ -13,7 +13,7 @@
     "dev": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "sst dev --stage dev",
+        "command": "sst dev --mode=basic --stage dev",
         "cwd": "apps/app-b"
       }
     },

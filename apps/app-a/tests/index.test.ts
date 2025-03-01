@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { Hono } from "hono";
-import app from "./index";
+import app from "@app-a/index";
 
 describe("app-a", () => {
   describe("GET /hello", () => {

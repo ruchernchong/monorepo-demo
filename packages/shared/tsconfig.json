@@ -2,8 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
     "paths": {
       "@shared/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["src/**/*", "index.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
 }

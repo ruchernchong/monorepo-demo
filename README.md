@@ -19,7 +19,14 @@ pnpm install
 # Run development servers
 pnpm dev:app-a     # Run app-a in development mode
 pnpm dev:app-b     # Run app-b in development mode
-pnpm dev:all       # Run all apps in development mode
+pnpm dev           # Run all apps in development mode
+```
+
+## Building
+
+```bash
+pnpm build           # Build all projects
+pnpm build:shared    # Build shared package only
 ```
 
 ## Testing
@@ -32,11 +39,12 @@ pnpm test:shared    # Run all tests in shared package
 pnpm test:coverage  # Run all tests with coverage
 ```
 
-Each project uses Vitest for testing. To run tests for a specific file:
+## Deployment
 
 ```bash
-cd apps/app-a && pnpm test src/path/to/file.test.ts
-cd apps/app-a && pnpm test:watch src/path/to/file.test.ts    # Watch mode
+pnpm deploy           # Deploy all applications
+pnpm deploy:app-a     # Deploy app-a only
+pnpm deploy:app-b     # Deploy app-b only
 ```
 
 ## Linting and Formatting
