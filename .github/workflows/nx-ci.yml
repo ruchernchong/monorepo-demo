@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -28,7 +32,7 @@ jobs:
       
       # Derive appropriate SHAs for base and head for `nx affected` commands
       - uses: nrwl/nx-set-shas@v3
-      
+
       # Setup NX cache
       - name: NX Cache
         uses: actions/cache@v3
