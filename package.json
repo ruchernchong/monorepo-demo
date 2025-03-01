@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Monorepo for managing multiple apps and shared packages for Ru Chern Chong",
   "private": true,
+  "author": "Ru Chern Chong <hello@ruchern.dev>",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:app-a": "nx run app-a:dev",
@@ -12,9 +14,6 @@
     "deploy:app-b": "nx run app-b:deploy",
     "deploy:all": "nx run-many --target=deploy --all"
   },
-  "author": "Ru Chern Chong <hello@ruchern.dev>",
-  "license": "MIT",
-  "packageManager": "pnpm@10.5.2",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@nx/eslint": "^20.4.6",
@@ -23,5 +22,6 @@
   },
   "dependencies": {
     "@ruchernchong/monorepo-shared": "workspace:*"
-  }
+  },
+  "packageManager": "pnpm@10.5.2"
 }
