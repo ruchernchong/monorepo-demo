@@ -13,12 +13,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   },
-  "pnpm": {
-    "overrides": {
-      "monorepo-shared": "link:../../../../Library/pnpm/global/5/node_modules/@ruchernchong/monorepo-shared"
-    }
-  },
   "dependencies": {
-    "monorepo-shared": "link:../../../../Library/pnpm/global/5/node_modules/@ruchernchong/monorepo-shared"
+    "@ruchernchong/monorepo-shared": "workspace:*"
   }
 }
