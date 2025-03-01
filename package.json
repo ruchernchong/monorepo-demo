@@ -11,7 +11,7 @@
     "test:app-b": "nx run app-b:test",
     "test:shared": "nx run shared:test",
     "test:coverage": "nx run-many --target=test:coverage --all",
-    "dev": "nx run-many --target=dev --all --parallel=3",
+    "dev": "nx run-many --target=dev --all --parallel=3 --output-style=stream",
     "dev:app-a": "nx run app-a:dev",
     "dev:app-b": "nx run app-b:dev",
     "build": "nx run-many --target=build --all",
