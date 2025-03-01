@@ -1,16 +1,15 @@
 {
   "name": "@ruchernchong/monorepo-shared",
   "version": "1.0.0",
-  "description": "",
-  "private": "true",
+  "description": "Shared utilities and reusable code for the @ruchernchong monorepo",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
-  "devDependencies": {},
   "dependencies": {
     "hono": "^4.7.2"
-  }
+  },
+  "devDependencies": {}
 }

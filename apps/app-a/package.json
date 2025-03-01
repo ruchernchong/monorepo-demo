@@ -1,7 +1,8 @@
 {
   "name": "@ruchernchong/monorepo-app-a",
   "version": "1.0.0",
-  "description": "",
+  "description": "App A: A serverless application leveraging @ruchernchong/monorepo-shared",
+  "private": true,
   "scripts": {
     "dev": "sst dev --stage dev",
     "test": "echo \"Error: no test specified\" && exit 1"
