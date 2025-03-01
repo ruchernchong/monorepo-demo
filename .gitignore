@@ -130,3 +130,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+### NX specific
+# NX cache
+.nx/cache
+
+# Generated Nx files
+.nx/installation
+.nx/workspace-data
+
