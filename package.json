@@ -16,12 +16,15 @@
     "dev:app-b": "pnpm -F monorepo-app-b run dev",
     "deploy": "pnpm run -r deploy",
     "deploy:app-a": "pnpm -F monorepo-app-a run deploy",
-    "deploy:app-b": "pnpm -F monorepo-app-b run deploy"
+    "deploy:app-b": "pnpm -F monorepo-app-b run deploy",
+    "changeset": "changeset",
+    "version": "changeset version"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   },
   "dependencies": {
+    "@changesets/cli": "^2.28.1",
     "@ruchernchong/monorepo-shared": "workspace:*"
   },
   "packageManager": "pnpm@10.5.2"
