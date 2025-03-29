@@ -6,25 +6,25 @@
   "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
   "scripts": {
-    "test": "nx run-many --target=test --all",
-    "test:app-a": "nx run app-a:test",
-    "test:app-b": "nx run app-b:test",
-    "test:shared": "nx run shared:test",
-    "test:coverage": "nx run-many --target=test:coverage --all",
-    "dev": "nx run-many --target=dev --all --parallel=3 --output-style=stream",
-    "dev:app-a": "nx run app-a:dev",
-    "dev:app-b": "nx run app-b:dev",
-    "deploy": "nx run-many --target=deploy --all",
-    "deploy:app-a": "nx run app-a:deploy",
-    "deploy:app-b": "nx run app-b:deploy"
+    "test": "pnpm run -r test",
+    "test:app-a": "pnpm -F monorepo-app-a run test",
+    "test:app-b": "pnpm -F monorepo-app-b run test",
+    "test:shared": "pnpm -F shared run test",
+    "test:coverage": "pnpm run -r test:coverage",
+    "dev": "pnpm run -r --parallel dev",
+    "dev:app-a": "pnpm -F monorepo-app-a run dev",
+    "dev:app-b": "pnpm -F monorepo-app-b run dev",
+    "deploy": "pnpm run -r deploy",
+    "deploy:app-a": "pnpm -F monorepo-app-a run deploy",
+    "deploy:app-b": "pnpm -F monorepo-app-b run deploy",
+    "changeset": "changeset",
+    "version": "changeset version"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@nx/eslint": "^20.4.6",
-    "@nx/js": "^20.4.6",
-    "nx": "^20.4.6"
+    "@biomejs/biome": "^1.9.4"
   },
   "dependencies": {
+    "@changesets/cli": "^2.28.1",
     "@ruchernchong/monorepo-shared": "workspace:*"
   },
   "packageManager": "pnpm@10.5.2"
