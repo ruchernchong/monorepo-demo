@@ -1,6 +1,6 @@
 {
   "name": "@ruchernchong/monorepo-shared",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared utilities and reusable code for the @ruchernchong monorepo",
   "private": true,
   "main": "index.ts",
