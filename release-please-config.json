@@ -2,10 +2,6 @@
   "release-type": "node",
   "separate-pull-requests": false,
   "packages": {
-    ".": {
-      "package-name": "@ruchernchong/monorepo-demo",
-      "component": "monorepo-demo"
-    },
     "apps/app-a": {
       "package-name": "monorepo-app-a",
       "component": "app-a"

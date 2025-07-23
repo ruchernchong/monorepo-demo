@@ -1,7 +1,6 @@
 {
-  "name": "@ruchernchong/monorepo-demo",
-  "version": "1.1.0",
-  "description": "Monorepo for managing multiple apps and shared packages for Ru Chern Chong",
+  "name": "monorepo-demo",
+  "description": "Monorepo for managing multiple apps and shared packages",
   "private": true,
   "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
