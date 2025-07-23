@@ -1,6 +1,6 @@
 {
   "name": "@ruchernchong/monorepo-app-a",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "App A: A serverless application leveraging @ruchernchong/monorepo-shared",
   "private": true,
   "scripts": {
