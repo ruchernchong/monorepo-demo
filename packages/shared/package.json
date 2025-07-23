@@ -12,7 +12,7 @@
   "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
   "dependencies": {
-    "hono": "^4.7.2"
+    "hono": "^4.8.5"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^3.0.7",
