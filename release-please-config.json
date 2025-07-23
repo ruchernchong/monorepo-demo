@@ -1,0 +1,29 @@
+{
+  "release-type": "node",
+  "separate-pull-requests": false,
+  "packages": {
+    ".": {
+      "package-name": "@ruchernchong/monorepo-demo",
+      "component": "monorepo-demo"
+    },
+    "apps/app-a": {
+      "package-name": "monorepo-app-a",
+      "component": "app-a"
+    },
+    "apps/app-b": {
+      "package-name": "monorepo-app-b",
+      "component": "app-b"
+    },
+    "packages/shared": {
+      "package-name": "shared",
+      "component": "shared"
+    }
+  },
+  "plugins": [
+    {
+      "type": "linked-versions",
+      "groupName": "monorepo-apps",
+      "components": ["app-a", "app-b", "shared"]
+    }
+  ]
+}
