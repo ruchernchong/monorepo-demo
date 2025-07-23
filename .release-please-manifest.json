@@ -1,5 +1,5 @@
 {
-  "apps/app-a": "1.1.0",
-  "apps/app-b": "1.1.0",
-  "packages/shared": "1.1.0"
+  "apps/app-a": "1.1.1",
+  "apps/app-b": "1.1.1",
+  "packages/shared": "1.1.1"
 }
