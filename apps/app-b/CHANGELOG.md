@@ -1,5 +1,12 @@
 # @ruchernchong/monorepo-app-b
 
+## [1.3.0](https://github.com/ruchernchong/monorepo-demo/compare/app-b-v1.2.0...app-b-v1.3.0) (2025-07-23)
+
+
+### Miscellaneous Chores
+
+* **app-b:** Synchronize monorepo-apps versions
+
 ## [1.2.0](https://github.com/ruchernchong/monorepo-demo/compare/app-b-v1.1.0...app-b-v1.2.0) (2025-07-23)
 
 

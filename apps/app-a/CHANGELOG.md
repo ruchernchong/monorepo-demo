@@ -1,5 +1,12 @@
 # @ruchernchong/monorepo-app-a
 
+## [1.3.0](https://github.com/ruchernchong/monorepo-demo/compare/app-a-v1.2.0...app-a-v1.3.0) (2025-07-23)
+
+
+### Features
+
+* migrate changesets to release-please ([6db841c](https://github.com/ruchernchong/monorepo-demo/commit/6db841c20a55e8abb995fca6495d49c92fe0e2a1))
+
 ## [1.2.0](https://github.com/ruchernchong/monorepo-demo/compare/app-a-v1.1.0...app-a-v1.2.0) (2025-07-23)
 
 
