@@ -18,7 +18,7 @@
     "deploy:app-b": "pnpm -F monorepo-app-b run deploy"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "2.1.2"
   },
   "dependencies": {
     "@ruchernchong/monorepo-shared": "workspace:*"
