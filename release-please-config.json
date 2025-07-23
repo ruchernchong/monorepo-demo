@@ -1,6 +1,7 @@
 {
   "release-type": "node",
   "separate-pull-requests": false,
+  "group-pull-request-title-pattern": "chore: release ${version}",
   "packages": {
     "apps/app-a": {
       "package-name": "monorepo-app-a",
