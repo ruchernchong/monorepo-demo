@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@ruchernchong/monorepo-shared": "workspace:*",
-    "hono": "^4.8.5",
+    "hono": "^4.9.6",
     "sst": "3.17.10"
   },
   "devDependencies": {
