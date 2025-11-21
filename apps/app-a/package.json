@@ -4,7 +4,7 @@
   "description": "App A: A serverless application leveraging @ruchernchong/monorepo-shared",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev --env dev",
+    "dev": "wrangler dev --env dev --port 8787",
     "deploy:staging": "wrangler deploy --env staging --minify",
     "deploy:prod": "wrangler deploy --env prod --minify",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
