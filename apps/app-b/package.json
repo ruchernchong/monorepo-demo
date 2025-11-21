@@ -4,8 +4,10 @@
   "description": "App B: Another serverless application leveraging @ruchernchong/monorepo-shared",
   "private": true,
   "scripts": {
-    "dev": "sst dev --stage dev",
-    "deploy": "sst deploy --stage prod",
+    "dev": "wrangler dev --env dev",
+    "deploy:staging": "wrangler deploy --env staging --minify",
+    "deploy:prod": "wrangler deploy --env prod --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -23,6 +25,7 @@
     "@cloudflare/workers-types": "4.20251120.0",
     "@vitest/coverage-v8": "^4.0.10",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.10"
+    "vitest": "^4.0.10",
+    "wrangler": "^4.50.0"
   }
 }

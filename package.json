@@ -10,13 +10,15 @@
     "test:app-b": "turbo run monorepo-app-b#test",
     "test:shared": "turbo run test",
     "test:coverage": "turbo run test:coverage",
-    "dev": "turbo dev",
+    "dev": "turbo run dev",
     "dev:app-a": "pnpm -F monorepo-app-a run dev",
     "dev:app-b": "pnpm -F monorepo-app-b run dev",
     "deploy": "pnpm run -r deploy",
     "deploy:app-a": "pnpm -F monorepo-app-a run deploy",
     "deploy:app-b": "pnpm -F monorepo-app-b run deploy",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "deploy:staging": "turbo run deploy:staging",
+    "deploy:prod": "turbo run deploy:prod"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.6",

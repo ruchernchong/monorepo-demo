@@ -1,7 +1,9 @@
 {
   "$schema": "./node_modules/turbo/schema.json",
   "ui": "tui",
-  "globalDependencies": ["tsconfig.json"],
+  "globalDependencies": ["**/env.*", "tsconfig.json"],
+  "globalEnv": ["NODE_ENV", "CI", "CLOUDFLARE_API_TOKEN"],
+  "globalPassThroughEnv": ["CLOUDFLARE_API_TOKEN"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -19,6 +21,16 @@
       "dependsOn": ["^test:coverage"],
       "inputs": ["$TURBO_DEFAULT$", "**/*.test.ts", "**/*.test.tsx"],
       "outputs": ["coverage/**"]
+    },
+    "deploy:staging": {
+      "dependsOn": ["^deploy:staging"],
+      "env": ["CLOUDFLARE_API_TOKEN"],
+      "inputs": ["$TURBO_DEFAULT$"]
+    },
+    "deploy:prod": {
+      "dependsOn": ["^deploy:prod"],
+      "env": ["CLOUDFLARE_API_TOKEN"],
+      "inputs": ["$TURBO_DEFAULT$"]
     }
   }
 }

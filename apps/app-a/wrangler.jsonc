@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "app-a",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-11-17",
+  "env": {
+    "dev": {},
+    "staging": {},
+    "prod": {}
+  }
+}
