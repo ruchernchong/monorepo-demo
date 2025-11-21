@@ -8,7 +8,8 @@
     "deploy": "sst deploy --stage prod",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "check-types": "tsc --noEmit"
   },
   "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
@@ -21,6 +22,7 @@
     "@biomejs/biome": "2.3.6",
     "@cloudflare/workers-types": "4.20251120.0",
     "@vitest/coverage-v8": "^4.0.10",
+    "typescript": "^5.9.3",
     "vitest": "^4.0.10"
   }
 }

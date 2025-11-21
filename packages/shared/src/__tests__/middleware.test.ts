@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { requestLogger } from "@shared/middleware";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { requestLogger } from "../middleware";
 
 describe("middleware", () => {
   describe("requestLogger", () => {

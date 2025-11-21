@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { createSuccessResponse, createErrorResponse } from "@shared/responses";
+import { describe, expect, it } from "vitest";
+import { createErrorResponse, createSuccessResponse } from "../responses";
 
 describe("responses", () => {
   describe("createSuccessResponse", () => {

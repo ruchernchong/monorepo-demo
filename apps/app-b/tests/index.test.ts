@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
 import app from "@app-b/index";
+import { describe, expect, it } from "vitest";
 
 describe("app-b", () => {
   describe("GET /bye", () => {

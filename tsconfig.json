@@ -4,6 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "skipLibCheck": true,
+    "strict": true,
     "target": "ESNext",
     "verbatimModuleSyntax": true,
     "paths": {
@@ -12,5 +13,6 @@
       "@app-b/*": ["apps/app-b/src/*"]
     }
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
