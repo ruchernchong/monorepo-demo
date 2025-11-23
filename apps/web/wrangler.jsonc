@@ -8,6 +8,20 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging"
+      },
+      "route": "staging.monorepo-demo.ruchern.dev"
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      },
+      "route": "monorepo-demo.ruchern.dev"
+    }
+  },
   "observability": {
     "enabled": false,
     "head_sampling_rate": 1,
