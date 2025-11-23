@@ -11,15 +11,21 @@
   "env": {
     "staging": {
       "vars": {
-        "ENVIRONMENT": "staging"
+        "STAGE": "staging"
       },
-      "route": "staging.monorepo-demo.ruchern.dev"
+      "route": {
+        "custom_domain": true,
+        "pattern": "staging.monorepo-demo.ruchern.dev"
+      }
     },
     "production": {
       "vars": {
-        "ENVIRONMENT": "production"
+        "STAGE": "production"
       },
-      "route": "monorepo-demo.ruchern.dev"
+      "route": {
+        "custom_domain": true,
+        "pattern": "monorepo-demo.ruchern.dev"
+      }
     }
   },
   "observability": {
