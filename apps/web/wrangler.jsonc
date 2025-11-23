@@ -10,16 +10,28 @@
   },
   "env": {
     "staging": {
+      "name": "monorepo-demo-web-staging",
       "vars": {
-        "ENVIRONMENT": "staging"
+        "STAGE": "staging"
       },
-      "route": "staging.monorepo-demo.ruchern.dev"
+      "routes": [
+        {
+          "pattern": "staging.monorepo-demo.ruchern.dev/*",
+          "custom_domain": true
+        }
+      ]
     },
     "production": {
+      "name": "monorepo-demo-web-prod",
       "vars": {
-        "ENVIRONMENT": "production"
+        "STAGE": "production"
       },
-      "route": "monorepo-demo.ruchern.dev"
+      "routes": [
+        {
+          "pattern": "monorepo-demo.ruchern.dev/*",
+          "custom_domain": true
+        }
+      ]
     }
   },
   "observability": {
