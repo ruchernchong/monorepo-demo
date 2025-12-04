@@ -13,7 +13,7 @@
   "author": "Ru Chern Chong <hello@ruchern.dev>",
   "license": "MIT",
   "dependencies": {
-    "hono": "^4.10.6"
+    "hono": "^4.10.7"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.6",
