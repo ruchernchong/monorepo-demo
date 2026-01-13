@@ -27,8 +27,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared
       hono:
-        specifier: ^4.10.8
-        version: 4.10.8
+        specifier: ^4.11.4
+        version: 4.11.4
       sst:
         specifier: 3.17.23
         version: 3.17.23
@@ -58,8 +58,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/shared
       hono:
-        specifier: ^4.10.8
-        version: 4.10.8
+        specifier: ^4.11.4
+        version: 4.11.4
       sst:
         specifier: 3.17.23
         version: 3.17.23
@@ -129,8 +129,8 @@ importers:
   packages/shared:
     dependencies:
       hono:
-        specifier: ^4.10.8
-        version: 4.10.8
+        specifier: ^4.11.4
+        version: 4.11.4
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.6
@@ -2411,8 +2411,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.10.8:
-    resolution: {integrity: sha512-DDT0A0r6wzhe8zCGoYOmMeuGu3dyTAE40HHjwUsWFTEy5WxK1x2WDSsBPlEXgPbRIFY6miDualuUDbasPogIww==}
+  hono@4.11.4:
+    resolution: {integrity: sha512-U7tt8JsyrxSRKspfhtLET79pU8K+tInj5QZXs1jSugO1Vq5dFj3kmZsRldo29mTBfcjDRVRXrEZ6LS63Cog9ZA==}
     engines: {node: '>=16.9.0'}
 
   hono@4.7.4:
@@ -6339,7 +6339,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.10.8: {}
+  hono@4.11.4: {}
 
   hono@4.7.4: {}
 
